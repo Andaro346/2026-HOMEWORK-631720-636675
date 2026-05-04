@@ -11,8 +11,8 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  
 public class Labirinto {
 
-	private Stanza stanzaCorrente;
 	private Stanza stanzaVincente;
+	private Stanza stanzaIniziale;
 	
 	public Labirinto() {
 		creaStanze();
@@ -47,23 +47,17 @@ public class Labirinto {
 
 	        /* pone gli attrezzi nelle stanze */
 			aulaN10.addAttrezzo(lanterna);
-			atrio.addAttrezzo(osso);
-			
-			stanzaCorrente = atrio;  
+			atrio.addAttrezzo(osso);  
 			stanzaVincente = biblioteca;
+			stanzaIniziale = atrio;
 	    }
 	 
 	 public Stanza getStanzaVincente() {
 		 return this.stanzaVincente;
 	 }
 	 
-	 public void setStanzaCorrente(Stanza stanzaCorrente) {
-			this.stanzaCorrente = stanzaCorrente;
-		}
-	 
-	 public Stanza getStanzaCorrente() {
-			return this.stanzaCorrente;
-		}
-	 
+	 public Stanza getStanzaIniziale() {
+		 return this.stanzaIniziale;
+	 }
 	 
 }

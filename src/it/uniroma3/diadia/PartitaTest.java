@@ -22,14 +22,30 @@ public class PartitaTest {
 	}
 
 	@Test
+	public void testRichiedoStanzaVincente() {
+		assertEquals("Biblioteca", partitaTest.getStanzaVincente().getNome());
+	}
+	
+	@Test
+	public void testRichiedoStanzaCorrente() {
+		assertEquals("Atrio", partitaTest.getStanzaCorrente().getNome());
+	}
+	
+	@Test
+	public void testRichiedoStanzaCorrenteDopoAverlaCambiata() {
+		partitaTest.setStanzaCorrente(stanzaTest);
+		assertEquals("aula", partitaTest.getStanzaCorrente().getNome());
+	}
+
+	@Test
 	public void testVerificoSeHoVintoLaPartitaSenzaStareNellaStanzaVincente() {
-		partitaTest.getMappa().setStanzaCorrente(stanzaTest);
+		partitaTest.setStanzaCorrente(stanzaTest);
 		assertFalse(partitaTest.vinta());
 	}
 	
 	@Test
 	public void testVerificoSeHoVintoLaPartitaStandoNellaStanzaVincente() {
-		partitaTest.getMappa().setStanzaCorrente(partitaTest.getMappa().getStanzaVincente());
+		partitaTest.setStanzaCorrente(partitaTest.getStanzaVincente());
 		assertTrue(partitaTest.vinta());
 	}
 	
@@ -46,7 +62,7 @@ public class PartitaTest {
 
 	@Test
 	public void testControlloSeFinitaQuandoHoVinto() {
-		partitaTest.getMappa().setStanzaCorrente(partitaTest.getMappa().getStanzaVincente());
+		partitaTest.setStanzaCorrente(partitaTest.getStanzaVincente());
 		assertTrue(partitaTest.isFinita());
 	}
 	
@@ -58,5 +74,4 @@ public class PartitaTest {
 		}
 		assertTrue(stanzaTest.removeAttrezzo(spadaTest));
 	}
-	
 }

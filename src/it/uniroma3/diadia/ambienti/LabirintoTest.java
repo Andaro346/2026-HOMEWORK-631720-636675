@@ -20,16 +20,5 @@ public class LabirintoTest {
 	public void testRichiedoLaStanzaVincente() {
 		assertEquals("Biblioteca", mappaTest.getStanzaVincente().getNome());
 	}
-	
-	@Test
-	public void testRichiedoStanzaCorrente() {
-		assertEquals("Atrio", mappaTest.getStanzaCorrente().getNome());
-	}
-	
-	@Test
-	public void testRichiedoStanzaCorrenteDopoAverlaCambiata() {
-		mappaTest.setStanzaCorrente(stanzaTest);
-		assertEquals("aula", mappaTest.getStanzaCorrente().getNome());
-	}
 
 }

@@ -15,20 +15,22 @@ public class Partita {
 
 	private Labirinto mappa;
 	private Giocatore studente;
+	private Stanza stanzaCorrente;
 	private boolean finita;
 	
 	public Partita(){
 		mappa = new Labirinto();
 		studente = new Giocatore();
 		this.finita = false;
-	}
-	
-	public Labirinto getMappa() {
-		return this.mappa;
+		stanzaCorrente = mappa.getStanzaIniziale();
 	}
 
 	public Giocatore getGiocatore() {
 		return studente;
+	}
+	
+	public Stanza getStanzaVincente() {
+		return mappa.getStanzaVincente();
 	}
 	
 	/**
@@ -36,7 +38,7 @@ public class Partita {
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
-		return mappa.getStanzaCorrente() == mappa.getStanzaVincente();
+		return getStanzaCorrente() == mappa.getStanzaVincente();
 	}
 
 	/**
@@ -62,4 +64,12 @@ public class Partita {
 	public void setCfu(int cfu) {
 		studente.setCfu(cfu);;		
 	}	
+	
+	public void setStanzaCorrente(Stanza stanzaCorrente) {
+		this.stanzaCorrente = stanzaCorrente;
+	}
+	 
+	public Stanza getStanzaCorrente() {
+		return this.stanzaCorrente;
+	}
 }

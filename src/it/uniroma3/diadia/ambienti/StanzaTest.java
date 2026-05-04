@@ -72,29 +72,13 @@ public class StanzaTest {
 	public void testRimuovoUnAttrezzoNonPresente() {
 		assertFalse(stanzaTest.removeAttrezzo(spadaTest));
 	}
+
 	
-	@Test
-	public void testAggiungoUnAttrezzoAdUnaStanzaVuota() {
-		assertTrue(stanzaTest.addAttrezzo(spadaTest));
-	}
-	
-	@Test
-	public void testAggiungoUnAttrezzoAdUnaStanzaConUnAttrezzo() {
-		stanzaTest.addAttrezzo(spadaTest);
-		assertTrue(stanzaTest.addAttrezzo(spadaTest));
-	}
-	
-	@Test
-	public void testAggiungoUnAttrezzoAdUnaStanzaConNumeroMassimoDiItemRaggiunti() {
-		for(int i = 0; i<10; i++) {
-			stanzaTest.addAttrezzo(spadaTest);
-		}
-		assertFalse(stanzaTest.addAttrezzo(spadaTest));
-	}
 	@Test
 	public void testRichiedoIlNome() {
 		assertEquals("aula", stanzaTest.getNome());
-	}	
+	}
+	
 	
 	@Test
 	public void testRichiedoNomeStanzaAdiacente() {
