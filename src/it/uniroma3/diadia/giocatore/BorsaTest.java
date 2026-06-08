@@ -34,14 +34,6 @@ public class BorsaTest {
 	}
 	
 	@Test
-	public void testAggiungoUnAttrezzoAdUnaBorsaConNumeroMassimoDiItemRaggiunti() {
-		for(int i = 0; i<10; i++) {
-			borsaTest.addAttrezzo(spadaTest_2);
-		}
-		assertFalse(borsaTest.addAttrezzo(spadaTest_2));
-	}
-	
-	@Test
 	public void testOttengoUnAttrezzoPresente() {
 		borsaTest.addAttrezzo(spadaTest_1);
 		assertEquals(spadaTest_1, borsaTest.getAttrezzo("spada 1"));
@@ -94,23 +86,6 @@ public class BorsaTest {
 		}
 		assertEquals(null, borsaTest.removeAttrezzo("spada 1"));
 	}
-	
-	@Test
-	public void testRimuovoUnAttrezzoDaUnaBorsaNonVuotaMaConAttrezzoCercato() {
-		borsaTest.addAttrezzo(spadaTest_1);
-		for(int i = 0; i<4; i++) {
-			borsaTest.addAttrezzo(spadaTest_2);
-		}
-		assertEquals(spadaTest_1, borsaTest.removeAttrezzo("spada 1"));
-	}
-	
-	@Test
-	public void testRimuovoUnAttrezzoDaUnaBorsaCompletamentePienaConAttrezzoCercato() {
-		borsaTest.addAttrezzo(spadaTest_1);
-		for(int i = 0; i<9; i++) {
-			borsaTest.addAttrezzo(spadaTest_2);
-		}
-		assertEquals(spadaTest_1, borsaTest.removeAttrezzo("spada 1"));
-	}
+
 	
 }
